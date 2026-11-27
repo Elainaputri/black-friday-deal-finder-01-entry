@@ -1,0 +1,268 @@
+/* Deal Radar look: midnight-navy header, amber sale accents, warm paper
+   cards. One stylesheet, no external fonts or images. */
+
+:root {
+  --navy: #101c2e;
+  --navy-soft: #1b2c44;
+  --amber: #ffb703;
+  --amber-dark: #b97f00;
+  --red: #c0392b;
+  --green: #0b6b3a;
+  --ink: #1c2430;
+  --muted: #5b6675;
+  --line: #e3e0d8;
+  --paper: #faf7f1;
+  --card: #ffffff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 17px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+a { color: var(--green); }
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--amber);
+  outline-offset: 2px;
+}
+
+.site-header {
+  background: var(--navy);
+  color: #fff;
+  padding: 14px 20px;
+  display: flex;
+  gap: 16px;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.brand {
+  color: var(--amber);
+  font-weight: 800;
+  font-size: 22px;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.header-note { color: #c8d3e0; font-size: 14px; }
+
+main {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 20px 40px;
+}
+
+.hero { padding: 28px 0 8px; }
+
+.hero h1 {
+  margin: 0 0 8px;
+  font-size: 42px;
+  line-height: 1.1;
+  color: var(--navy);
+}
+
+.tagline { max-width: 760px; margin: 0 0 12px; font-size: 18px; }
+
+.stats { color: var(--muted); margin: 0 0 8px; }
+.stats strong { color: var(--ink); }
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: end;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin: 16px 0 8px;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  box-shadow: 0 2px 10px rgba(16, 28, 46, 0.08);
+}
+
+.controls label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.controls label.search { flex: 1 1 260px; }
+
+.controls input,
+.controls select {
+  font: inherit;
+  font-size: 15px;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid #c9c4b8;
+  border-radius: 8px;
+  padding: 9px 10px;
+}
+
+.controls input:focus,
+.controls select:focus {
+  outline: 3px solid var(--amber);
+  outline-offset: 1px;
+}
+
+.result-count { color: var(--muted); margin: 6px 2px 14px; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.verdict {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  padding: 3px 8px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.verdict-new-low { background: #ffe08a; color: #6b4e00; }
+.verdict-strong { background: #d9f2e3; color: var(--green); }
+.verdict-routine { background: #e8e8e8; color: #555; }
+
+.pct {
+  font-weight: 800;
+  color: var(--red);
+  font-size: 18px;
+}
+
+.card h3 { margin: 0; font-size: 19px; line-height: 1.3; }
+.card h3 a { color: var(--ink); text-decoration: none; }
+.card h3 a:hover { text-decoration: underline; }
+
+.meta { margin: 0; color: var(--muted); font-size: 14px; }
+
+.price { margin: 0; font-size: 17px; }
+.price strong { font-size: 26px; color: var(--navy); }
+.price s { color: var(--muted); }
+.price.big strong { font-size: 34px; }
+
+.save {
+  color: var(--green);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.checked { margin: 0; color: var(--muted); font-size: 13px; }
+
+.actions { margin: auto 0 0; padding-top: 8px; display: flex; gap: 14px; align-items: center; }
+
+.buy {
+  display: inline-block;
+  background: var(--amber);
+  color: var(--navy);
+  font-weight: 800;
+  text-decoration: none;
+  padding: 9px 14px;
+  border-radius: 8px;
+}
+
+.buy:hover { background: #ffc93c; }
+
+.big-buy { font-size: 18px; padding: 12px 18px; }
+
+.detail { font-size: 14px; }
+
+.empty {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.how {
+  margin-top: 32px;
+  border-top: 2px solid var(--navy);
+  padding-top: 8px;
+}
+
+.how h2 { color: var(--navy); font-size: 22px; }
+.how li { margin-bottom: 8px; }
+
+.back { margin: 20px 0 0; }
+
+.detail { max-width: 760px; }
+.detail h1 { color: var(--navy); font-size: 32px; line-height: 1.2; margin: 12px 0 6px; }
+
+.verdict-note {
+  background: #fff7dd;
+  border-left: 4px solid var(--amber);
+  padding: 12px 14px;
+  border-radius: 0 8px 8px 0;
+}
+
+.detail dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 6px 18px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.detail dt { font-weight: 700; }
+.detail dd { margin: 0; }
+
+.compare {
+  margin-top: 28px;
+  border-top: 1px solid var(--line);
+  padding-top: 8px;
+}
+
+footer {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 20px 40px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+@media (max-width: 640px) {
+  .hero h1 { font-size: 32px; }
+  .controls { position: static; }
+  .grid { grid-template-columns: 1fr; }
+  .detail h1 { font-size: 26px; }
+  .detail dl { grid-template-columns: 1fr; gap: 0; }
+  .detail dd { margin-bottom: 10px; }
+}
